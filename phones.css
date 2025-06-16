@@ -1,0 +1,41 @@
+import React from 'react';
+
+const phones = [
+  {
+    name: 'iPhone 15 Pro',
+    price: '₦950,000',
+    image: '/images/iphone.jpg'
+  },
+  {
+    name: 'Samsung Galaxy S24',
+    price: '₦880,000',
+    image: '/images/samsung.jpg'
+  },
+  {
+    name: 'Infinix Zero 30',
+    price: '₦310,000',
+    image: '/images/infinix.jpg'
+  }
+];
+
+function Phones() {
+  return (
+    <section className="phones" id="phones">
+      <div className="container">
+        <h2>Featured Phones</h2>
+        <div className="phone-list">
+          {phones.map((phone, index) => (
+            <div key={index} className="phone">
+              <img src={phone.image} alt={phone.name} />
+              <h3>{phone.name}</h3>
+              <p>{phone.price}</p>
+              <button>Buy Now</button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Phones;
